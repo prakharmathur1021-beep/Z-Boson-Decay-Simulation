@@ -43,13 +43,13 @@ This is a small toy project I wrote to get comfortable with **ROOT**, Monte Carl
 
 ---
 
-## What went wrong 
+## What went wrong (and how I fixed it)
 - At first, the histogram of invariant mass was shifted because I had forgotten to include electron mass in the kinematics. Adding it fixed the bug (though the effect is tiny).
 - Had to cap pₜ values at ~80 GeV because the exponential sampling sometimes gave unrealistically large values.
 
 ---
 
-## Limitations
+## Limitations (being honest)
 - This is a **toy generator**, not a physics-accurate simulation.
 - No detector effects (no smearing, no acceptance cuts).
 - Z decay is treated isotropically, but real Z→ℓ⁺ℓ⁻ angular distributions depend on polarization and couplings.
@@ -69,13 +69,3 @@ This is a small toy project I wrote to get comfortable with **ROOT**, Monte Carl
 - Basics of four-vector boosts and invariant mass reconstruction.
 - Importance of validating every step (I caught bugs by checking 4-momentum conservation).
 - That even simple toy simulations give intuition for more advanced analyses in papers (like Z–hadron correlations).
-
-
-
-## ▶️ Usage
-
-### 1. Run the generator
-```bash
-cd "/mnt/c/Users/Prakhar Mathur/Downloads/Z-Decay-root-project"
-root -l -q "ZDecayGenerator.C(100000)"
-
